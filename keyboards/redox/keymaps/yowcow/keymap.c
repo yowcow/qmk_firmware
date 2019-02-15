@@ -29,25 +29,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐                         ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      XXXXXXX ,KC_Q    ,KC_W    ,KC_E    ,KC_R    ,KC_T    ,KC_ESC  ,                          KC_ESC  ,KC_Y    ,KC_U    ,KC_I    ,KC_O    ,KC_P    ,KC_EQL  ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┤                         ├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_PGUP ,KC_A    ,KC_S    ,KC_D    ,KC_F    ,KC_G    ,KC_TAB  ,                          KC_ENT  ,KC_H    ,KC_J    ,KC_K    ,KC_L    ,KC_SCLN ,KC_QUOT ,
+     FN_L    ,KC_A    ,KC_S    ,KC_D    ,KC_F    ,KC_G    ,KC_TAB  ,                          KC_ENT  ,KC_H    ,KC_J    ,KC_K    ,KC_L    ,KC_SCLN ,KC_QUOT ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┐       ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_PGDN ,KC_Z    ,KC_X    ,KC_C    ,KC_V    ,KC_B    ,FN_L    ,KC_LGUI ,        KC_RGUI ,FN_L    ,KC_N    ,KC_M    ,KC_COMM ,KC_DOT  ,KC_SLSH ,KC_BSLS ,
+     KC_LALT ,KC_Z    ,KC_X    ,KC_C    ,KC_V    ,KC_B    ,KC_LGUI ,XXXXXXX ,        XXXXXXX ,KC_RGUI ,KC_N    ,KC_M    ,KC_COMM ,KC_DOT  ,KC_SLSH ,KC_BSLS ,
   //├────────┼────────┼────────┼────────┼────┬───┴────┬───┼────────┼────────┤       ├────────┼────────┼───┬────┴───┬────┼────────┼────────┼────────┼────────┤
-     KC_LALT ,XXXXXXX ,XXXXXXX ,XXXXXXX ,     KC_LCTRL,    KC_SPC  ,KC_LSFT ,        KC_RSFT ,KC_BSPC ,    KC_RCTRL,     KC_LBRC ,KC_RBRC ,XXXXXXX ,KC_RALT
+     XXXXXXX ,XXXXXXX ,KC_PGUP ,KC_PGDN ,     KC_LCTRL,    KC_SPC  ,KC_LSFT ,        KC_RSFT ,KC_BSPC ,    KC_RCTRL,     KC_LBRC ,KC_RBRC ,FN_L    ,KC_RALT
   //└────────┴────────┴────────┴────────┘    └────────┘   └────────┴────────┘       └────────┴────────┘   └────────┘    └────────┴────────┴────────┴────────┘
   ),
 
   [_FN] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                                           ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     _______ ,KC_F1   ,KC_F2   ,KC_F3   ,KC_F4   ,KC_F5   ,                                            KC_F6   ,KC_F7   ,KC_F8   ,KC_F9   ,KC_F10  ,XXXXXXX ,
+     RESET   ,KC_F1   ,KC_F2   ,KC_F3   ,KC_F4   ,KC_F5   ,                                            KC_F6   ,KC_F7   ,KC_F8   ,KC_F9   ,KC_F10  ,XXXXXXX ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐                         ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     RESET   ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,_______ ,                          _______ ,XXXXXXX ,XXXXXXX ,XXXXXXX ,KC_LBRC ,KC_RBRC ,KC_MINS ,
+     _______ ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,_______ ,                          _______ ,XXXXXXX ,XXXXXXX ,XXXXXXX ,KC_LBRC ,KC_RBRC ,KC_MINS ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┤                         ├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_HOME ,VOL_DOWN,VOL_UP  ,VOL_MUTE,XXXXXXX ,XXXXXXX ,_______ ,                          _______ ,KC_LEFT ,KC_DOWN ,KC_UP   ,KC_RGHT ,XXXXXXX ,_______ ,
+     _______ ,VOL_DOWN,VOL_UP  ,VOL_MUTE,XXXXXXX ,XXXXXXX ,_______ ,                          _______ ,KC_LEFT ,KC_DOWN ,KC_UP   ,KC_RGHT ,XXXXXXX ,_______ ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┐       ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_END  ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,_______ ,_______ ,        _______ ,_______ ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,_______ ,
+     _______ ,RGB_TOG ,RGB_MOD ,RGB_RMOD,XXXXXXX ,XXXXXXX ,_______ ,_______ ,        _______ ,_______ ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,XXXXXXX ,_______ ,
   //├────────┼────────┼────────┼────────┼────┬───┴────┬───┼────────┼────────┤       ├────────┼────────┼───┬────┴───┬────┼────────┼────────┼────────┼────────┤
-     _______ ,RGB_TOG ,RGB_MOD ,RGB_RMOD,     _______ ,    _______ ,_______ ,        _______ ,KC_DEL  ,    _______ ,     RGB_VAD ,RGB_VAI ,_______ ,_______
+     _______ ,_______ ,KC_HOME ,KC_END  ,     _______ ,    _______ ,_______ ,        _______ ,KC_DEL  ,    _______ ,     RGB_VAD ,RGB_VAI ,_______ ,_______
   //└────────┴────────┴────────┴────────┘    └────────┘   └────────┴────────┘       └────────┴────────┘   └────────┘    └────────┴────────┴────────┴────────┘
   )
 
