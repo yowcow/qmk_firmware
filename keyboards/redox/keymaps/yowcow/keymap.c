@@ -14,6 +14,9 @@ enum {
 // Shortcut to make keymap more readable
 #define FN_L        MO(L_FUNCT)
 #define FNS_L       LM(L_FUNCT, MOD_LSFT)
+#define LT_BSLS     RGUI_T(KC_BSLS)
+#define LT_QUOT     LT(L_FUNCT, KC_QUOT)
+//#define LT_EQL      MT(LM(L_FUNCT, MOD_LSFT), KC_EQL)
 #define VOL_DOWN    KC__VOLDOWN
 #define VOL_UP      KC__VOLUP
 #define VOL_MUTE    KC__MUTE
@@ -27,11 +30,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐                         ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      FNS_L   ,KC_Q    ,KC_W    ,KC_E    ,KC_R    ,KC_T    ,KC_ESC  ,                          KC_ESC  ,KC_Y    ,KC_U    ,KC_I    ,KC_O    ,KC_P    ,KC_EQL  ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┤                         ├────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     FN_L    ,KC_A    ,KC_S    ,KC_D    ,KC_F    ,KC_G    ,KC_TAB  ,                          KC_ENT  ,KC_H    ,KC_J    ,KC_K    ,KC_L    ,KC_SCLN ,KC_QUOT ,
+     FN_L    ,KC_A    ,KC_S    ,KC_D    ,KC_F    ,KC_G    ,KC_TAB  ,                          KC_ENT  ,KC_H    ,KC_J    ,KC_K    ,KC_L    ,KC_SCLN ,LT_QUOT ,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┐       ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     KC_LGUI ,KC_Z    ,KC_X    ,KC_C    ,KC_V    ,KC_B    ,KC_LGUI ,KC_PGUP ,        KC_PGDN ,KC_RGUI ,KC_N    ,KC_M    ,KC_COMM ,KC_DOT  ,KC_SLSH ,KC_BSLS ,
+     KC_LGUI ,KC_Z    ,KC_X    ,KC_C    ,KC_V    ,KC_B    ,KC_LGUI ,KC_PGUP ,        KC_PGDN ,KC_RGUI ,KC_N    ,KC_M    ,KC_COMM ,KC_DOT  ,KC_SLSH ,LT_BSLS ,
   //├────────┼────────┼────────┼────────┼────┬───┴────┬───┼────────┼────────┤       ├────────┼────────┼───┬────┴───┬────┼────────┼────────┼────────┼────────┤
-     KC_LALT ,XXXXXXX ,XXXXXXX ,XXXXXXX ,     KC_LCTRL,    KC_SPC  ,KC_LSFT ,        KC_RSFT ,KC_BSPC ,    KC_RCTRL,     XXXXXXX ,XXXXXXX ,FN_L    ,KC_RALT
+     KC_LALT ,XXXXXXX ,XXXXXXX ,XXXXXXX ,     KC_LCTRL,    KC_SPC  ,KC_LSFT ,        KC_RSFT ,KC_BSPC ,    KC_RCTRL,     XXXXXXX ,XXXXXXX ,XXXXXXX ,KC_RALT
   //└────────┴────────┴────────┴────────┘    └────────┘   └────────┴────────┘       └────────┴────────┘   └────────┘    └────────┴────────┴────────┴────────┘
   ),
 
