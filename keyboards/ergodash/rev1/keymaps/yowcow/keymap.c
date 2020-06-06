@@ -8,9 +8,21 @@ enum {
   L_RS
 };
 
+enum {
+    TD_RSFTALT = 0,
+    TD_LSFTALT
+};
+
+qk_tap_dance_action_t tap_dance_actions[] = {
+    [TD_RSFTALT] = ACTION_TAP_DANCE_DOUBLE(KC_RSFT, KC_RALT),
+    [TD_LSFTALT] = ACTION_TAP_DANCE_DOUBLE(KC_LSFT, KC_LALT)
+};
+
 // Shortcut to make keymap more readable
 #define FUNCT   MO(L_FN)
 #define RAISE   MO(L_RS)
+#define RSFTALT TD(TD_RSFTALT)
+#define LSFTALT TD(TD_LSFTALT)
 #define VL_DOWN KC__VOLDOWN
 #define VL_UP   KC__VOLUP
 #define VL_MUTE KC__MUTE
@@ -22,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    XXXXXXX,                        XXXXXXX, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    XXXXXXX, \
     XXXXXXX, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_GRV ,                        KC_BSLS, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, XXXXXXX, \
     XXXXXXX, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_BSPC,                        KC_SPC , KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, XXXXXXX, \
-    XXXXXXX, KC_ESC,  KC_TAB , KC_LGUI,          KC_LCTL, KC_BSPC, KC_LSFT,      KC_RALT, KC_SPC , FUNCT,            KC_MINS, KC_QUOT, KC_ENT , XXXXXXX  \
+    XXXXXXX, KC_ESC,  KC_TAB , KC_LGUI,          KC_LCTL, KC_BSPC, LSFTALT,      RSFTALT, KC_SPC , FUNCT,            KC_MINS, KC_QUOT, KC_ENT , XXXXXXX  \
   ),
 
   [L_FN] = LAYOUT( \
