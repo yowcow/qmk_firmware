@@ -23,6 +23,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 #define RAISE   MO(L_RS)
 #define RSFTCTL TD(TD_RSFTCTL)
 #define LSFTALT TD(TD_LSFTALT)
+#define IME_TGL RCTL(KC_SPC)
 #define VL_DOWN KC__VOLDOWN
 #define VL_UP   KC__VOLUP
 #define VL_MUTE KC__MUTE
@@ -41,8 +42,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______, _______,                        _______, _______, _______, _______, _______, _______, _______, \
     _______, KC_EXLM, KC_AT  , KC_UP  , KC_DLR , KC_PERC, _______,                        _______, KC_PGUP, KC_7   , KC_8   , KC_9   , KC_BSPC, _______, \
     _______, KC_LPRN, KC_LEFT, KC_DOWN, KC_RGHT, KC_RPRN, KC_CIRC,                        KC_AMPR, KC_PGDN, KC_4   , KC_5   , KC_6   , _______, _______, \
-    _______, KC_LBRC, KC_RBRC, KC_HASH, KC_LCBR, KC_RCBR, _______,                        _______, KC_ASTR, KC_1   , KC_2   , KC_3   , KC_PPLS, _______, \
-    _______, RAISE  , _______, _______,          _______, _______, _______,      _______, _______, _______,          KC_PDOT, KC_0   , KC_PEQL, _______  \
+    _______, KC_LBRC, KC_RBRC, KC_HASH, KC_LCBR, KC_RCBR, IME_TGL,                        _______, KC_ASTR, KC_1   , KC_2   , KC_3   , KC_PPLS, _______, \
+    _______, RAISE  , _______, _______,          KC_ESC , IME_TGL, _______,      _______, _______, _______,          KC_PDOT, KC_0   , KC_PEQL, _______  \
   ),
 
   [L_RS] = LAYOUT( \
