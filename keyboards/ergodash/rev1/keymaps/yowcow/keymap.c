@@ -34,16 +34,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, \
     XXXXXXX, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    XXXXXXX,                        XXXXXXX, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    XXXXXXX, \
     XXXXXXX, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_TAB ,                        KC_BSPC, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, XXXXXXX, \
-    XXXXXXX, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_SPC ,                        KC_ENT , KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_BSLS, XXXXXXX, \
-    XXXXXXX, KC_ESC,  KC_LALT, KC_LGUI,          KC_LCTL, KC_SPC , KC_LSFT,      KC_RSFT, KC_ENT , FUNCT,            KC_MINS, KC_QUOT, KC_SLSH, XXXXXXX  \
+    XXXXXXX, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_SPC ,                        KC_ENT , KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, XXXXXXX, \
+    XXXXXXX, KC_ESC,  KC_GRV , KC_LGUI,          KC_LCTL, KC_SPC , KC_LSFT,      KC_RALT, KC_ENT , FUNCT,            KC_MINS, KC_QUOT, KC_BSLS, XXXXXXX  \
   ),
 
   [L_FN] = LAYOUT( \
     _______, _______, _______, _______, _______, _______, _______,                        _______, _______, _______, _______, _______, _______, _______, \
     _______, KC_EXLM, KC_AT  , KC_UP  , KC_DLR , KC_PERC, _______,                        _______, KC_PGUP, KC_7   , KC_8   , KC_9   , KC_AMPR, _______, \
-    _______, KC_LPRN, KC_LEFT, KC_DOWN, KC_RGHT, KC_RPRN, KC_CIRC,                        KC_TILD, KC_PGDN, KC_4   , KC_5   , KC_6   , KC_ASTR, _______, \
-    _______, KC_LBRC, KC_RBRC, KC_HASH, KC_LCBR, KC_RCBR, IME_TGL,                        _______, KC_GRV , KC_1   , KC_2   , KC_3   , KC_PLUS, _______, \
-    _______, RAISE  , _______, _______,          _______, IME_TGL, _______,      _______, _______, _______,          KC_PDOT, KC_0   , KC_EQL , _______  \
+    _______, KC_LPRN, KC_LEFT, KC_DOWN, KC_RGHT, KC_RPRN, KC_CIRC,                        KC_TILD, KC_PGDN, KC_4   , KC_5   , KC_6   , KC_PLUS, _______, \
+    _______, KC_LBRC, KC_RBRC, KC_HASH, KC_LCBR, KC_RCBR, _______,                        _______, KC_ASTR, KC_1   , KC_2   , KC_3   , KC_EQL , _______, \
+    _______, RAISE  , IME_TGL, _______,          _______, _______, _______,      _______, _______, _______,          KC_PDOT, KC_0   , _______, _______  \
   ),
 
   [L_RS] = LAYOUT( \
