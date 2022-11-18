@@ -19,10 +19,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESC,  KC_LALT, KC_LGUI, KC_LCTL, KC_SPC,  KC_LSFT, KC_RCTL, KC_ENT,  MO(_RS), KC_RGUI, KC_RALT, KC_BSLS ),
 
   [_RS] = LAYOUT( /* [> RAISE <] */
-    KC_EXLM, KC_AT,   KC_UP,   KC_DLR,  KC_PERC,                   XXXXXXX, KC_7,    KC_8,    KC_9,    KC_EQL ,
-    KC_LPRN, KC_LEFT, KC_DOWN, KC_RGHT, KC_RPRN,                   KC_GRV,  KC_4,    KC_5,    KC_6,    KC_MINS,
-    KC_LBRC, KC_RBRC, KC_HASH, KC_LCBR, KC_RCBR, KC_CIRC, KC_AMPR, KC_ASTR, KC_1,    KC_2,    KC_3,    KC_QUOT,
-    MO(_LW), _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_0,    _______),
+    KC_EXLM, KC_AT,   KC_UP,   KC_DLR,  KC_PERC,                   XXXXXXX, KC_7,    KC_8,    KC_9,    KC_MINS ,
+    KC_LPRN, KC_LEFT, KC_DOWN, KC_RGHT, KC_RPRN,                   KC_GRV,  KC_4,    KC_5,    KC_6,    KC_EQL  ,
+    KC_LBRC, KC_RBRC, KC_HASH, KC_LCBR, KC_RCBR, KC_CIRC, KC_AMPR, KC_ASTR, KC_1,    KC_2,    KC_3,    KC_QUOT ,
+    MO(_LW), _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_0,    _______ ),
 
   [_LW] = LAYOUT( /* [> LOWER <] */
     KC_INS,  KC_HOME, KC_UP,   KC_END,  KC_PGUP,                   KC_PGUP, KC_F7,   KC_F8,   KC_F9,   KC_F10  ,
