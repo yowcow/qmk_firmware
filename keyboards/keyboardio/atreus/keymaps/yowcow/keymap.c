@@ -12,17 +12,20 @@ enum layer_names {
     _FN
 };
 
+#define CTL_SPC LCTL_T(KC_SPC)
+#define CTL_ENT RCTL_T(KC_ENT)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [_QW] = LAYOUT( /* Qwerty */
+  [_QW] = LAYOUT( /* QWERTY */
     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
     KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                      KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN,
     KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_TAB,  KC_BSPC, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,
-    KC_ESC,  KC_LALT, KC_LGUI, MO(_LW), KC_SPC,  KC_LSFT, KC_RCTL, KC_ENT,  MO(_RS), KC_RGUI, KC_RALT, KC_BSLS
+    KC_ESC,  KC_LALT, KC_LGUI, MO(_LW), CTL_SPC, KC_LSFT, KC_RSFT, CTL_ENT, MO(_RS), KC_RGUI, KC_RALT, KC_BSLS
     ),
 
   [_RS] = LAYOUT( /* [> RAISE <] */
     KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                   KC_CIRC, KC_AMPR, KC_ASTR, KC_MINS, KC_EQL,
-    KC_GRV,  XXXXXXX, XXXXXXX, KC_LPRN, KC_RPRN,                   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_QUOT,
+    KC_LPRN, KC_GRV,  XXXXXXX, XXXXXXX, KC_RPRN,                   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_QUOT,
     KC_LBRC, KC_RBRC, XXXXXXX, KC_LCBR, KC_RCBR, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
     _______, _______, _______, MO(_FN), _______, _______, _______, _______, _______, _______, _______, _______
     ),
