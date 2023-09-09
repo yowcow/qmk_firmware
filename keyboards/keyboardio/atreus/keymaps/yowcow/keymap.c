@@ -9,17 +9,7 @@ enum layer_names {
     _QW,
     _RS,
     _LW,
-    _FN
 };
-
-//#define LW_ESC  LT(_LW, KC_ESC)
-//#define RS_BSLS LT(_RS, KC_BSLS)
-
-//#define ALT_ESC LT(KC_LALT, KC_ESC)
-
-//#define LW_A    LT(_LW, KC_A)
-//#define RS_SCLN LT(_RS, KC_SCLN)
-//#define FN_ESC  LT(_FN, KC_ESC)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QW] = LAYOUT( /* QWERTY */
@@ -42,11 +32,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_MUTE, KC_VOLD, KC_VOLU, KC_BRID, KC_BRIU, QK_BOOT, KC_DEL,  _______, KC_F1,   KC_F2,   KC_F3,   KC_F12,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
-
-  //[_FN] = LAYOUT( /* [> FUNCTIONS <] */
-  //  _______, _______, _______, _______, _______,                   _______, KC_F7,   KC_F8,   KC_F9,    KC_F10,
-  //  _______, _______, _______, _______, _______,                   _______, KC_F4,   KC_F5,   KC_F6,    KC_F11,
-  //  _______, _______, _______, _______, _______, _______, _______, _______, KC_F1,   KC_F2,   KC_F3,    KC_F12,
-  //  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______
-  //  )
 };
