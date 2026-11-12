@@ -12,12 +12,17 @@ enum layer_names {
     _NV,
 };
 
+enum custom_keycodes {
+    LGUI_IME = SAFE_RANGE,
+    RGUI_IME,
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QW] = LAYOUT( /* QWERTY */
     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
     KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                      KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN,
     KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_TAB,  KC_BSPC, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,
-    LT(_NV, KC_ESC), KC_LALT, KC_LGUI, KC_LCTL, KC_SPC,  KC_LSFT, KC_RCTL, KC_ENT,  MO(_RS), KC_RGUI, KC_QUOT, KC_MINS
+    LT(_NV, KC_ESC), KC_LALT, LGUI_IME, KC_LCTL, KC_SPC,  KC_LSFT, KC_RCTL, KC_ENT,  MO(_RS), RGUI_IME, KC_QUOT, KC_MINS
     ),
 
   [_RS] = LAYOUT( /* [> RAISE <] */
@@ -41,3 +46,32 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 };
+
+static uint16_t gui_ime_timer;
+static bool     gui_ime_held;
+static bool     gui_ime_interrupted;
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (keycode != LGUI_IME && keycode != RGUI_IME) {
+        if (record->event.pressed && gui_ime_held) {
+            gui_ime_interrupted = true;
+        }
+        return true;
+    }
+
+    const uint8_t kc_gui = (keycode == LGUI_IME) ? KC_LGUI : KC_RGUI;
+    if (record->event.pressed) {
+        gui_ime_timer       = timer_read();
+        gui_ime_interrupted = false;
+        gui_ime_held        = true;
+        register_code(kc_gui);
+    } else {
+        unregister_code(kc_gui);
+        gui_ime_held = false;
+        if (!gui_ime_interrupted && timer_elapsed(gui_ime_timer) < TAPPING_TERM) {
+            // LNG2 = 英数, LNG1 = かな
+            tap_code((keycode == LGUI_IME) ? KC_LNG2 : KC_LNG1);
+        }
+    }
+    return false;
+}
